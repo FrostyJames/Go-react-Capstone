@@ -1,58 +1,85 @@
-Got it, James — let’s put everything we’ve built into a professional README.md. This will document your Go + React Capstone project, including setup, features, endpoints, frontend, and testing.
-Here’s a complete draft you can drop into your repo:
 
-📚 Go + React Library Management Dashboard
-A full‑stack capstone project built with Go (backend) and React + TailwindCSS (frontend).
-It implements a simple Library Management System with full CRUD operations, borrowing/returning functionality, and automated tests.
+Here’s your full README in that format:
 
-🚀 Features
-- Backend (Go)
-- Add, List, Borrow, Return, Update, Delete books
-- In‑memory storage (resets on server restart)
-- JSON API endpoints
-- CORS enabled for frontend integration
-- Unit tests with go test
-- Frontend (React + TailwindCSS)
-- Styled dashboard with table layout
-- Add book form
-- Borrow / Return toggle
-- Update book (inline prompt)
-- Delete book
-- Error handling and loading states
-- Responsive Tailwind design
+---
 
-🛠️ Backend Setup
-Run the server
-cd Backend
-go run main.go
+# 📚 Go + React Library Management System
+
+Library Management System is a full‑stack capstone project built with **Go (backend)** and **React + TailwindCSS (frontend)**. It provides a dashboard interface for managing books, allowing users to add, update, delete, borrow, and return books. The backend exposes RESTful JSON APIs, while the frontend offers a responsive, styled interface.
+
+---
+
+## Features
+
+- Add new books with title, author, and year  
+- List all books in a dashboard table  
+- Borrow and return books with status badges  
+- Update book details (title, author, year)  
+- Delete books from the system  
+- Error handling and loading states  
+- Responsive TailwindCSS design  
+- Backend unit tests with `go test`
+
+---
+
+## Tech Stack
+
+- **Go 1.20+** – Backend API  
+- **React 18+** – Frontend UI  
+- **TailwindCSS** – Styling framework  
+- **Jest + React Testing Library** (optional) – Frontend testing  
+- **SQLite/PostgreSQL** (future option) – Persistent storage  
+
+---
+
+## Setup Instructions
+
+1. **Clone the repository**
+   ```bash
+   git clone <your-repo-url>
+   cd Go-react-Capstone
+
+2. **Start Backend Server**
+    ```bash
+    cd Backend
+    go run main.go
+
+Server runs at: http://localhost:8080
+
+3. **Start the Frontend (React + Vite)**
+   ```bash
+   cd ../frontend
+   npm install
+   npm run dev
+
+## Api Endpoints
+- api/books 
+- api/add
+- api/borrow?id={id}
+- api/return?id={id}
+- pi/update?id={id}
+- api/delete?id={id}
 
 
-Server runs at:
-http://localhost:8080
+## Project Structure
+Go-react-Capstone/
+├── Backend/
+│   ├── main.go         # Go backend server
+│   ├── main_test.go    # Unit tests for API endpoints
+│   └── ...
+├── frontend/
+│   ├── src/App.jsx     # React dashboard
+│   ├── src/main.jsx    # React entry point
+│   ├── index.html      # Tailwind CDN or build entry
+│   └── ...
+└── README.md
 
-
-API Endpoints
-|  |  |  | 
-|  | /api/books |  | 
-|  | /api/add |  | 
-|  | /api/borrow?id={id} |  | 
-|  | /api/return?id={id} |  | 
-|  | /api/update?id={id} |  | 
-|  | /api/delete?id={id} |  | 
-
-
-
-🧪 Backend Testing
-Tests are defined in main_test.go.
-Run tests
-cd Backend
-go test ./...
-
-
-Example verbose output
+## Running Tests
+Backend Tests
+Bashcd Backend
 go test -v
 
-
+**Example Output**
 === RUN   TestAddAndListBooks
 --- PASS: TestAddAndListBooks (0.00s)
 === RUN   TestBorrowAndReturnBook
@@ -64,62 +91,45 @@ go test -v
 PASS
 ok  	github.com/FrostyJames/Go-react-Capstone/backend	0.006s
 
+## Frontend Tests (optional – add if you implement Jest)
+Bashcd frontend
+npm run test
 
+## How to Use 
+- Run Backend
+cd Backend
+go run main.go
 
-🎨 Frontend Setup
-Install dependencies
+- Run the Frontend
 cd frontend
-npm install
-
-
-Run dev server
 npm run dev
+ 
+
+ **Navigate through the dashboard**
+Library Management Dashboard Main View- Add new books
+- Borrow / Return books
+- Update book details
+- Delete books
+- View all records
 
 
-Frontend runs at:
-http://localhost:5173
+## Notes & Limitations
+
+Data is stored in-memory (resets when the Go server restarts)
+Book updates currently use window.prompt() – ready to be replaced with a modal
+No authentication (intentionally kept simple for capstone scope)
 
 
-TailwindCSS
-You can use either:
-- CDN: Add <script src="https://cdn.tailwindcss.com"></script> in index.html
-- Full install: npm install -D tailwindcss postcss autoprefixer && npx tailwindcss init -p
+## Future Enhancements
 
-📊 Frontend Features
-- Dashboard Table
-- Displays all books with ID, Title, Author, Year, Status
-- Status badges: green = Available, red = Borrowed
-- Actions
-- Borrow / Return toggle
-- Update (via prompt)
-- Delete (removes row)
-- Add Book Form
-- Inputs for Title, Author, Year
-- Adds new book to backend and updates table
+Replace in-memory storage with SQLite or PostgreSQL
+Add search and filter functionality
+Implement proper modal forms for adding/updating books
+Add user authentication and borrowing history
+Write comprehensive frontend tests with Jest + RTL
+Dockerize the full application for easy deployment
 
-🔎 Testing Workflow
-- Backend
-- Run go test to validate API endpoints.
-- Use curl or Postman to manually test endpoints.
-- Frontend
-- Run npm run dev and interact with the UI.
-- Add, Borrow, Return, Update, Delete books.
-- Confirm table updates correctly.
 
-⚠️ Notes
-- Books are stored in memory → data resets when backend restarts.
-- For persistence, connect to a database (e.g., SQLite, PostgreSQL).
-- Update currently uses prompt() — can be replaced with a Tailwind modal for better UX.
-
-📌 Next Steps
-- Add search & filter functionality in frontend.
-- Replace prompt() with a modal form for updates.
-- Connect backend to a database for persistence.
-- Add frontend tests with Jest + React Testing Library.
-- Deploy backend & frontend together (Docker or cloud).
-
-👨‍💻 Author
+## Author
 James Ivan
-Capstone project for Software Engineering — University of Eastern Africa, Baraton
-
-👉 James, this README is ready to drop into your repo. Do you want me to also scaffold a frontend testing section (with Jest + React Testing Library examples) so your README covers both backend and frontend testing?
+ Software Engineering Capstone Project
