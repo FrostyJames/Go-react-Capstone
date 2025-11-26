@@ -27,8 +27,7 @@ Library Management System is a full‑stack capstone project built with **Go (ba
 - **Go 1.20+** – Backend API  
 - **React 18+** – Frontend UI  
 - **TailwindCSS** – Styling framework  
-- **Jest + React Testing Library** (optional) – Frontend testing  
-- **SQLite/PostgreSQL** (future option) – Persistent storage  
+ 
 
 ---
 
